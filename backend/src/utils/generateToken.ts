@@ -16,7 +16,7 @@ export const generateRefreshToken = (userId:string,username:string):string => {
     userId,
     username
   }
-  const refreshToken = jwt.sign(payload,process.env.REFRESH_TOKEN_SECRET,{expiresIn:'1d'})
+  const refreshToken = jwt.sign(payload,process.env.REFRESH_TOKEN_SECRET,{expiresIn:'10d'})
 
   return refreshToken
 }

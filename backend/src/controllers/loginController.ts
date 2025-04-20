@@ -5,7 +5,8 @@ const loginController = (req:Request,res:Response):Response => {
   return res.status(200).json({
     userId,
     username,
-    message:'login successful'
+    message:'login successful',
+    login:true
   })
 }
 

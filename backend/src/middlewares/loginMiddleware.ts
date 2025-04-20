@@ -5,7 +5,7 @@ const loginMiddleware = (req:Request,res:Response,next:NextFunction):void|Respon
   const {username,password} = req.body
 
   const findUser = users.find(user => user.username===username && user.password===password)
-  if(!findUser) return res.status(401).json({message:'user not found'})
+  if(!findUser) return res.status(401).json({message:'user not found',login:false})
   
   const accessToken = generateToken(findUser.userId,findUser.username)
   const refreshToken = generateRefreshToken(findUser.userId,findUser.username)

@@ -1,30 +1,30 @@
-type User = {
+type Post = {
   userId:string,
   username:string,
-  password:string
+  post:string
 }
 
-const users:User[] = [
+const posts:Post[] = [
   {
     userId:'1',
     username:'alan',
-    password:'walker'
+    post:'walkerpost'
   },
   {
     userId:'2',
     username:'benny',
-    password:'blanco'
+    post:'blancopost'
   },
   {
     userId:'3',
     username:'cristiano',
-    password:'ronaldo'
+    post:'ronaldopost'
   },
   {
     userId:'4',
     username:'justin',
-    password:'bieber'
+    post:'bieberpost'
   }
 ]
 
-export default users
+export default posts
