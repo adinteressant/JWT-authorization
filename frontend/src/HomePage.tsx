@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from 'react'
 import { AuthContext } from './authContext'
 import { Link } from 'react-router-dom'
 import { UserContext } from './userContext'
+import { useNavigate } from 'react-router-dom'
 const HomePage = () => {
   const [post,setPost] = useState<string>('')
   useEffect(()=>{
@@ -17,8 +18,17 @@ const HomePage = () => {
     }
     fetchPosts()
   },[])
-  const {isLoggedIn} = useContext(AuthContext)
-  const {user} = useContext(UserContext)
+
+  const navigate = useNavigate()
+  const handleLogout = async ():Promise<void> => {
+    await fetch('/api/logout')
+    setIsLoggedIn(false)
+    setUser({userId:'',username:''})
+    navigate('/login')
+  }
+
+  const {isLoggedIn,setIsLoggedIn} = useContext(AuthContext)
+  const {user,setUser} = useContext(UserContext)
   if(isLoggedIn){
   return <div>welcome {user.username}
 
@@ -26,9 +36,10 @@ const HomePage = () => {
   {post}
   </div>
   <div>
-  <Link to={'/login'}>
-    logout
-    </Link>
+    <button onClick={handleLogout}>
+      logout
+    </button> 
+    
   </div>
   </div>
   }

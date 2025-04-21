@@ -29,7 +29,11 @@ const LoginPage = () => {
     const data = await response.json()
     if(data.login){
       setIsLoggedIn(true)
-      setUser({userId:data.userId,username:data.username}) 
+      // localStorage.setItem('isAuthenticated','true')
+      setUser({userId:data.userId,username:data.username})
+      // localStorage.setItem('userId',data.userId)
+      // localStorage.setItem('username',data.username)
+
       setMsg('')
       navigate('/home')
     }else{
