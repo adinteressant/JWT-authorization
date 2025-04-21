@@ -12,7 +12,7 @@ const LoginPage = () => {
   const userContext = useContext(UserContext)
   const [msg,setMsg] = useState<string>('')
   const [formData,setFormData] = useState<FormData>({username:'',password:''})
-  const {setIsLoggedIn} = authContext
+  const {isLoggedIn,setIsLoggedIn} = authContext
   const {setUser} = userContext
   const checkLogin = async ():Promise<void> => {
   try{
@@ -56,6 +56,12 @@ const LoginPage = () => {
     checkLogin()
     return
   }
+
+  if(isLoggedIn){
+    navigate('/home')
+    return
+  }
+
   return <div style={{display:'flex',height:'100vh',width:'100%',justifyContent:'center',alignItems:'center'}}> 
     <form style={{display:'flex',flexDirection:'column', gap:'10px',border:'black 1px solid',
     padding:'10px',width:'200px'}} onSubmit={handleLogin}>
