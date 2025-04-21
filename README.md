@@ -2,17 +2,16 @@
 
 -Node.js
 
-### Setup
-1. Clone repository
-git clone https://github.com/adinteressant/JWT-authorization.git
+### Clone repository
+    git clone https://github.com/adinteressant/JWT-authorization.git
 
-2. Install dependencies
+### Install dependencies
     cd frontend
     npm install
     cd ../backend 
     npm install
 
-3. create .env in backend and add the following variables
+### Create .env in backend and add
     PORT = 
     ACCESS_TOKEN_SECRET = 
     REFRESH_TOKEN_SECRET = 
