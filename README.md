@@ -7,22 +7,22 @@
 git clone https://github.com/adinteressant/JWT-authorization.git
 
 2. Install dependencies
-cd frontend
-npm install
-cd ../backend 
-npm install
+    cd frontend
+    npm install
+    cd ../backend 
+    npm install
 
 3. create .env in backend and add the following variables
-PORT = 
-ACCESS_TOKEN_SECRET = 
-REFRESH_TOKEN_SECRET = 
+    PORT = 
+    ACCESS_TOKEN_SECRET = 
+    REFRESH_TOKEN_SECRET = 
 
 ### Run the project
-run frontend
-npm run dev
+    run frontend
+    npm run dev
 
-run backend
-npm run dev
+    run backend
+    npm run dev
 
 -No Database:
 This project does not use a database.
